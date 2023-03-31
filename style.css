@@ -9,7 +9,6 @@ body {
     justify-content: center;
 }
 .calculator-container {
-    border: solid blue;
     width: 500px;
     height: 700px;
     display: flex;
@@ -17,30 +16,53 @@ body {
     justify-content: center;
 }
 .calculator-structure {
-    border: solid blue;
+    border: solid thick greenyellow;
+    background-color: black;
     width: 450px;
     height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .container {
-    border: solid blue;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .display {
-    border: thick solid black;
+    border: thick solid ;
+    background-color: white;
 }
 .buttons {
     width: 24%;
     height: 95%;
+    color: rgb(56, 12, 12);
+    font-size: 20px;
+    font-weight: bold;
 }
 .buttons:hover {
     background-color: rgb(145, 103, 12);
 }
 .buttons:active {
-    background-color: rgb(143, 235, 23);
+    background-color: rgb(238, 116, 232);
 }
 .zero-button {
     width: 49%;
+}
+.numbers {
+    background-color: bisque;
+}
+.operators {
+    background-color: aqua;
+}
+.equal-sign {
+    background-color: rgb(207, 128, 108);
+}
+.decimal {
+    background-color: brown;
+    font-size: 40px;
+}
+.none-operator {
+    background-color: greenyellow;
 }
