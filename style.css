@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+.calculator-container {
+    border: solid blue;
+    width: 500px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calculator-structure {
+    border: solid blue;
+    width: 450px;
+    height: 650px;
+}
+.container {
+    border: solid blue;
+    height: 100px;
+}
+.display {
+    border: thick solid black;
+}
