@@ -24,7 +24,14 @@ body {
 .container {
     border: solid blue;
     height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .display {
     border: thick solid black;
+}
+.buttons {
+    width: 24%;
+    height: 95%;
 }
