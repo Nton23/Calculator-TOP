@@ -54,3 +54,51 @@ numberOneBttn.addEventListener("click", () => {
     let numberOne = '1';
     display.innerHTML = numberOne;
 })
+//storing # 2 and display the number
+const numberTwoBttn = document.querySelector("#number-two-bttn");
+numberTwoBttn.addEventListener("click", () => {
+    let numberTwo = '2';
+    display.innerHTML = numberTwo;
+})
+//storing # 3 and display the number
+const numberThreeBttn = document.querySelector("#number-three-bttn");
+numberThreeBttn.addEventListener("click", () => {
+    let numberThree = '3';
+    display.innerHTML = numberThree;
+})
+//storing # 4 and display the number
+const numberFourBttn = document.querySelector("#number-four-bttn");
+numberFourBttn.addEventListener("click", () => {
+    let numberFour = '4';
+    display.innerHTML = numberFour;
+})
+//storing # 5 and display the number
+const numberFiveBttn = document.querySelector("#number-five-bttn");
+numberFiveBttn.addEventListener("click", () => {
+    let numberFive = '5';
+    display.innerHTML = numberFive;
+})
+//storing # 6 and display the number
+const numberSixBttn = document.querySelector("#number-six-bttn");
+numberSixBttn.addEventListener("click", () => {
+    let numberSix = '6';
+    display.innerHTML = numberSix;
+})
+//storing # 7 and display the number
+const numberSevenBttn = document.querySelector("#number-seven-bttn");
+numberSevenBttn.addEventListener("click", () => {
+    let numberSeven = '7';
+    display.innerHTML = numberSeven;
+})
+//storing # 8 and display the number
+const numberEightBttn = document.querySelector("#number-eight-bttn");
+numberEightBttn.addEventListener("click", () => {
+    let numberEight = '8';
+    display.innerHTML = numberEight;
+})
+//storing # 9 and display the number
+const numberNineBttn = document.querySelector("#number-nine-bttn");
+numberNineBttn.addEventListener("click", () => {
+    let numberNine = '9';
+    display.innerHTML = numberNine;
+})
