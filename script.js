@@ -39,4 +39,12 @@ function operate(firstNumber, secondNumber, operatorSign) {
             break;
     }
 };
+//get display
+const display = document.querySelector("#display");
 
+//storing # 0 and display the number
+const numberZeroBttn = document.querySelector("#number-zero-bttn");
+numberZeroBttn.addEventListener("click", () => {
+    let numberZero = 0;
+    display.innerHTML = numberZero;
+})
