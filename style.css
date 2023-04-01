@@ -33,7 +33,13 @@ body {
 .display {
     border: thick solid ;
     background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    color: green;
+    font-size: 60px;
+    font-weight: bold;
 }
+
 .buttons {
     width: 24%;
     height: 95%;
