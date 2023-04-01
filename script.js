@@ -23,5 +23,20 @@ let operatorInput = "";
 //Create an operate function takes an operator and 2 numbers
 //then calls one of the above function on the numbers
 function operate(firstNumber, secondNumber, operatorSign) {
-    
+    let sign = operatorSign;
+    switch (sign) {
+        case "operatorInput":
+            add(firstNumber, secondNumber);
+            break;
+        case "operatorInput":
+            substract(firstNumber, secondNumber);
+            break;
+        case "operatorInput":
+            multiply(firstNumber, secondNumber);
+            break;
+        case "operatorInput":
+            divide(firstNumber, secondNumber);
+            break;
+    }
 };
+
