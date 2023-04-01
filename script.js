@@ -49,6 +49,12 @@ function getNumbers(bttnIDName, numberValue) {
         display.innerHTML = value;
     });
 }
+function getOperators(bttnIDName, operatorSign) {
+    const button = document.querySelector(`#${bttnIDName}`);
+    button.addEventListener("click", () => {
+        let value = operatorSign;
+    })
+}
 //call function to display the number when button is pressed
 getNumbers("number-zero-bttn", 0);
 getNumbers("number-one-bttn", 1);
