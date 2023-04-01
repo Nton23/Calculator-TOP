@@ -1,17 +1,17 @@
 //create operators function 
-function add (firstNumber, secondNumber) {
+function add(firstNumber, secondNumber) {
     let result = firstNumber + secondNumber;
     return result;
 }
-function substract (firstNumber, secondNumber) {
+function substract(firstNumber, secondNumber) {
     let result = firstNumber - secondNumber;
     return result;
 }
-function multiply (firstNumber, secondNumber) {
+function multiply(firstNumber, secondNumber) {
     let result = firstNumber * secondNumber;
     return result;
 }
-function divide (firstNumber, secondNumber) {
+function divide(firstNumber, secondNumber) {
     let result = firstNumber / secondNumber;
     return result;
 }
@@ -40,8 +40,54 @@ function operate(firstNumber, secondNumber, operatorSign) {
     }
 };
 //get display
-const display = document.querySelector("#display");
+const display = document.getElementById("display");
 
+function getNumbers(bttnIDName, numberValue) {
+    const button = document.querySelector(`#${bttnIDName}`);
+    button.addEventListener("click", () => {
+        let value = numberValue;
+        display.innerHTML = value;
+    });
+}
+//call function to display the number when button is pressed
+getNumbers("number-zero-bttn", 0);
+getNumbers("number-one-bttn", 1);
+getNumbers("number-two-bttn", 2);
+getNumbers("number-three-bttn", 3);
+getNumbers("number-four-bttn", 4);
+getNumbers("number-five-bttn", 5);
+getNumbers("number-six-bttn", 6);
+getNumbers("number-seven-bttn", 7);
+getNumbers("number-eight-bttn", 8);
+getNumbers("number-nine-bttn", 9);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 //storing # 0 and display the number
 const numberZeroBttn = document.querySelector("#number-zero-bttn");
 numberZeroBttn.addEventListener("click", () => {
@@ -101,4 +147,5 @@ const numberNineBttn = document.querySelector("#number-nine-bttn");
 numberNineBttn.addEventListener("click", () => {
     let numberNine = '9';
     display.innerHTML = numberNine;
-})
+})*/
+
