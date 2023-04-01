@@ -45,6 +45,12 @@ const display = document.querySelector("#display");
 //storing # 0 and display the number
 const numberZeroBttn = document.querySelector("#number-zero-bttn");
 numberZeroBttn.addEventListener("click", () => {
-    let numberZero = 0;
+    let numberZero = '0';
     display.innerHTML = numberZero;
+})
+//storing # 1 and display the number
+const numberOneBttn = document.querySelector("#number-one-bttn");
+numberOneBttn.addEventListener("click", () => {
+    let numberOne = '1';
+    display.innerHTML = numberOne;
 })
