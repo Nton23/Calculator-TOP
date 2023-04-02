@@ -52,9 +52,12 @@ function getNumbers(bttnIDName, numberValue) {
 function getOperators(bttnIDName, operatorSign) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
-        let value = operatorSign;
+        let operator = operatorSign;
+        return operator;
     })
 }
+
+getOperators("plus-bttn", "+");
 //call function to display the number when button is pressed
 getNumbers("number-zero-bttn", 0);
 getNumbers("number-one-bttn", 1);
