@@ -20,6 +20,7 @@ let firstNumberInput = 0;
 let secondNumberInput = 0;
 let operatorInput = "";
 
+
 //Create an operate function takes an operator and 2 numbers
 //then calls one of the above function on the numbers
 function operate(firstNumber, secondNumber, operatorSign) {
@@ -39,16 +40,20 @@ function operate(firstNumber, secondNumber, operatorSign) {
             break;
     }
 };
-//get display
+//create display variable
 const display = document.getElementById("display");
-
+//create global variables to store the number user input
+let numberInputArray = [];
+let numberInput = 0;
+//funciton to get numbers when user click on the button
 function getNumbers(bttnIDName, numberValue) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
-        let value = numberValue;
-        display.innerHTML = value;
+        storeInput(numberValue);
     });
 }
+
+//create a get operator function
 function getOperators(bttnIDName, operatorSign) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
@@ -56,8 +61,28 @@ function getOperators(bttnIDName, operatorSign) {
         return operator;
     })
 }
+//create an event for equal
+//const equalSignBttn = document.getElementById("equal-sign-bttn");
+//equalSignBttn.addEventListener("click", () => {
+//})
 
+//store number input into array
+function storeInput (userInput) {
+    numberInputArray.push(userInput);
+    for (let i = 0; i < numberInputArray.length; i++) {
+        numberInput = numberInputArray[i];
+        display.textContent = numberInput;
+        }
+}
+
+
+
+//call function to store the operator when the user select
 getOperators("plus-bttn", "+");
+getOperators("minus-bttn", "-");
+getOperators("multiple-bttn", "*");
+getOperators("divide-bttn", "/");
+
 //call function to display the number when button is pressed
 getNumbers("number-zero-bttn", 0);
 getNumbers("number-one-bttn", 1);
