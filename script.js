@@ -65,9 +65,12 @@ function getOperators(bttnIDName, operatorSign) {
         operatorInput = operatorSign;
     })
 }
-//create an event for equal and put it in a function 
+//create an event for equal to call the operate function above
 const equalSignBttn = document.getElementById("equal-sign-bttn");
-
+equalSignBttn.addEventListener("click", () => {
+    let result = operate(firstNumberInput, secondNumberInput, operatorInput);
+    display.textContent = result;
+})
 
 //store number input into array
 function storeInput (userInput) {
@@ -76,8 +79,12 @@ function storeInput (userInput) {
     }
     newOutput = numberInputArray.join("");
     display.textContent = newOutput;
+    //store 2nd number input into array
+    if(isOperatorChecked = true) {
+        newOutput = numberInputArray.join("");
+        secondNumberInput = newOutput;
+    }
 }
-
 
 
 //call function to store the operator when the user select
