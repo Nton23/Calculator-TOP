@@ -69,10 +69,8 @@ function getOperators(bttnIDName, operatorSign) {
 //store number input into array
 function storeInput (userInput) {
     numberInputArray.push(userInput);
-    for (let i = 0; i < numberInputArray.length; i++) {
-        numberInput = numberInputArray[i];
-        display.textContent = numberInput;
-        }
+    newOutput = numberInputArray.join("");
+    display.textContent = newOutput;
 }
 
 //call function to store the operator when the user select
