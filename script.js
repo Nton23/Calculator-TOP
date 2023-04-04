@@ -45,7 +45,6 @@ function operate(firstNumber, secondNumber, operatorSign) {
 const display = document.getElementById("display");
 //create global variables to store the number user input
 let numberInputArray = [];
-let numberInput = 0;
 let newOutput = "";
 let isOperatorChecked = false;
 //funciton to get numbers when user click on the button
@@ -61,14 +60,14 @@ function getOperators(bttnIDName, operatorSign) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
         isOperatorChecked = true;
-        let operator = operatorSign;
-        return operator;
+        firstNumberInput = newOutput;
+        numberInputArray = [];
+        operatorInput = operatorSign;
     })
 }
-//create an event for equal
-//const equalSignBttn = document.getElementById("equal-sign-bttn");
-//equalSignBttn.addEventListener("click", () => {
-//})
+//create an event for equal and put it in a function 
+const equalSignBttn = document.getElementById("equal-sign-bttn");
+
 
 //store number input into array
 function storeInput (userInput) {
@@ -78,6 +77,8 @@ function storeInput (userInput) {
     newOutput = numberInputArray.join("");
     display.textContent = newOutput;
 }
+
+
 
 //call function to store the operator when the user select
 getOperators("plus-bttn", "+");
