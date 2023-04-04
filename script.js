@@ -75,8 +75,6 @@ function storeInput (userInput) {
         }
 }
 
-
-
 //call function to store the operator when the user select
 getOperators("plus-bttn", "+");
 getOperators("minus-bttn", "-");
