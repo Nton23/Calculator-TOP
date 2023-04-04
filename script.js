@@ -101,7 +101,11 @@ const acResetBttn = document.getElementById("ac-reset-bttn");
 acResetBttn.addEventListener("click", () => {
     display.textContent = 0;
     numberInputArray = [];
+    firstNumberInput = 0;
+    secondNumberInput = 0;
 })
+
+//create a percentage button and add an event to it
 
 //call function to store the operator when the user select
 getOperators("plus-bttn", "+");
