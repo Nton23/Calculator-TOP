@@ -47,6 +47,9 @@ const display = document.getElementById("display");
 let numberInputArray = [];
 let newOutput = "";
 let isOperatorChecked = false;
+let isEqualBttnChecked = false;
+let updatedInput = 0;
+
 //funciton to get numbers when user click on the button
 function getNumbers(bttnIDName, numberValue) {
     const button = document.querySelector(`#${bttnIDName}`);
@@ -60,7 +63,8 @@ function getOperators(bttnIDName, operatorSign) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
         isOperatorChecked = true;
-        firstNumberInput = newOutput;
+        firstNumberInput = parseInt(newOutput);
+        firstNumberInput = updatedInput;
         numberInputArray = [];
         operatorInput = operatorSign;
     })
@@ -68,8 +72,10 @@ function getOperators(bttnIDName, operatorSign) {
 //create an event for equal to call the operate function above
 const equalSignBttn = document.getElementById("equal-sign-bttn");
 equalSignBttn.addEventListener("click", () => {
+    isEqualBttnChecked = true;
     let result = operate(firstNumberInput, secondNumberInput, operatorInput);
     display.textContent = result;
+    updatedInput = result;
 })
 
 //store number input into array
@@ -82,7 +88,7 @@ function storeInput (userInput) {
     //store 2nd number input into array
     if(isOperatorChecked = true) {
         newOutput = numberInputArray.join("");
-        secondNumberInput = newOutput;
+        secondNumberInput = parseInt(newOutput);
     }
 }
 
