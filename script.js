@@ -16,35 +16,38 @@ function divide(firstNumber, secondNumber) {
     return result;
 }
 //Create 3 global variables: first input, operator sign, second input
-let firstNumberInput = 0;
-let secondNumberInput = 0;
-let operatorInput = "";
+let firstNumberInput = '';
+let secondNumberInput = '';
+let operatorInput = '';
 
 
 //Create an operate function takes an operator and 2 numbers
 //then calls one of the above function on the numbers
 function operate(firstNumber, secondNumber, operatorSign) {
-    let sign = operatorSign;
-    switch (sign) {
-        case "operatorInput":
-            add(firstNumber, secondNumber);
+    let result;
+    switch (operatorSign) {
+        case '+':
+            result = add(firstNumber, secondNumber);
             break;
-        case "operatorInput":
-            substract(firstNumber, secondNumber);
+        case '-':
+            result = substract(firstNumber, secondNumber);
             break;
-        case "operatorInput":
-            multiply(firstNumber, secondNumber);
+        case '*':
+            result = multiply(firstNumber, secondNumber);
             break;
-        case "operatorInput":
-            divide(firstNumber, secondNumber);
+        case '/':
+            result = divide(firstNumber, secondNumber);
             break;
     }
+    return result;
 };
 //create display variable
 const display = document.getElementById("display");
 //create global variables to store the number user input
 let numberInputArray = [];
 let numberInput = 0;
+let newOutput = "";
+let isOperatorChecked = false;
 //funciton to get numbers when user click on the button
 function getNumbers(bttnIDName, numberValue) {
     const button = document.querySelector(`#${bttnIDName}`);
@@ -57,6 +60,7 @@ function getNumbers(bttnIDName, numberValue) {
 function getOperators(bttnIDName, operatorSign) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
+        isOperatorChecked = true;
         let operator = operatorSign;
         return operator;
     })
