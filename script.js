@@ -68,7 +68,9 @@ function getOperators(bttnIDName, operatorSign) {
 
 //store number input into array
 function storeInput (userInput) {
-    numberInputArray.push(userInput);
+    if(numberInputArray.length < 13) {
+        numberInputArray.push(userInput);
+    }
     newOutput = numberInputArray.join("");
     display.textContent = newOutput;
 }
