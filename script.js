@@ -15,11 +15,11 @@ function divide(firstNumber, secondNumber) {
     let result = firstNumber / secondNumber;
     return result;
 }
+
 //Create 3 global variables: first input, operator sign, second input
 let firstNumberInput = '';
 let secondNumberInput = '';
 let operatorInput = '';
-
 
 //Create an operate function takes an operator and 2 numbers
 //then calls one of the above function on the numbers
@@ -41,8 +41,11 @@ function operate(firstNumber, secondNumber, operatorSign) {
     }
     return result;
 };
+
 //create display variable
 const display = document.getElementById("display");
+display.textContent = 0;
+
 //create global variables to store the number user input
 let numberInputArray = [];
 let newOutput = "";
@@ -69,6 +72,7 @@ function getOperators(bttnIDName, operatorSign) {
         operatorInput = operatorSign;
     })
 }
+
 //create an event for equal to call the operate function above
 const equalSignBttn = document.getElementById("equal-sign-bttn");
 equalSignBttn.addEventListener("click", () => {
@@ -92,6 +96,12 @@ function storeInput (userInput) {
     }
 }
 
+//create reset button and add an event to it
+const acResetBttn = document.getElementById("ac-reset-bttn");
+acResetBttn.addEventListener("click", () => {
+    display.textContent = 0;
+    numberInputArray = [];
+})
 
 //call function to store the operator when the user select
 getOperators("plus-bttn", "+");
