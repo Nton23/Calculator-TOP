@@ -52,14 +52,19 @@ let newOutput = "";
 let isOperatorChecked = false;
 let isEqualBttnChecked = false;
 let updatedInput = 0;
-
+let isPercentBttnChecked = false;
+let updatedSecondInput = 0;
 
 //funciton to get numbers when user click on the button
 function getNumbers(bttnIDName, numberValue) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
         if (isOperatorChecked === true) {
-            secondInput(numberValue);
+            if (isPercentBttnChecked === true) {
+                update
+            } else {
+                secondInput(numberValue);
+            }
         } else {
             firstInput(numberValue);
         }
@@ -122,8 +127,10 @@ acResetBttn.addEventListener("click", () => {
 //create a percentage button and add an event to it
 const percentBttn = document.getElementById("percent-bttn");
 percentBttn.addEventListener ("click", () => {
-    let result = firstNumberInput * (1/100);
-    display.textContent = parseFloat(result);
+    isPercentBttnChecked = true;
+    let result = (firstNumberInput * 0.01).toFixed(2);
+    updatedSecondInput = result;
+    display.textContent = updatedSecondInput;
 })
 
 //call function to store the operator when the user select
