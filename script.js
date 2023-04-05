@@ -53,6 +53,7 @@ let isOperatorChecked = false;
 let isEqualBttnChecked = false;
 let updatedInput = 0;
 
+
 //funciton to get numbers when user click on the button
 function getNumbers(bttnIDName, numberValue) {
     const button = document.querySelector(`#${bttnIDName}`);
@@ -62,6 +63,7 @@ function getNumbers(bttnIDName, numberValue) {
         } else {
             firstInput(numberValue);
         }
+        
     });
 }
 
@@ -95,6 +97,7 @@ function firstInput (userInput) {
     display.textContent = firstNumberInput;
 }
 
+//store second number input into array
 function secondInput (userInput) {
     if(numberInputArray.length < 13) {
         numberInputArray.push(userInput);
@@ -113,9 +116,15 @@ acResetBttn.addEventListener("click", () => {
     secondNumberInput = 0;
     isEqualBttnChecked = false;
     isOperatorChecked = false;
+    isPercentBttnChecked = false;
 })
 
 //create a percentage button and add an event to it
+const percentBttn = document.getElementById("percent-bttn");
+percentBttn.addEventListener ("click", () => {
+    let result = firstNumberInput * (1/100);
+    display.textContent = parseFloat(result);
+})
 
 //call function to store the operator when the user select
 getOperators("plus-bttn", "+");
