@@ -57,7 +57,11 @@ let updatedInput = 0;
 function getNumbers(bttnIDName, numberValue) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
-        storeInput(numberValue);
+        if (isOperatorChecked === true) {
+            secondInput(numberValue);
+        } else {
+            firstInput(numberValue);
+        }
     });
 }
 
@@ -66,8 +70,6 @@ function getOperators(bttnIDName, operatorSign) {
     const button = document.querySelector(`#${bttnIDName}`);
     button.addEventListener("click", () => {
         isOperatorChecked = true;
-        firstNumberInput = parseInt(newOutput);
-        firstNumberInput = updatedInput;
         numberInputArray = [];
         operatorInput = operatorSign;
     })
@@ -80,20 +82,26 @@ equalSignBttn.addEventListener("click", () => {
     let result = operate(firstNumberInput, secondNumberInput, operatorInput);
     display.textContent = result;
     updatedInput = result;
+    firstNumberInput = updatedInput;
 })
 
 //store number input into array
-function storeInput (userInput) {
+function firstInput (userInput) {
     if(numberInputArray.length < 13) {
         numberInputArray.push(userInput);
     }
     newOutput = numberInputArray.join("");
-    display.textContent = newOutput;
-    //store 2nd number input into array
-    if(isOperatorChecked = true) {
-        newOutput = numberInputArray.join("");
-        secondNumberInput = parseInt(newOutput);
+    firstNumberInput = parseInt(newOutput);
+    display.textContent = firstNumberInput;
+}
+
+function secondInput (userInput) {
+    if(numberInputArray.length < 13) {
+        numberInputArray.push(userInput);
     }
+    newOutput = numberInputArray.join("");
+    secondNumberInput = parseInt(newOutput);
+    display.textContent = secondNumberInput;
 }
 
 //create reset button and add an event to it
@@ -103,6 +111,8 @@ acResetBttn.addEventListener("click", () => {
     numberInputArray = [];
     firstNumberInput = 0;
     secondNumberInput = 0;
+    isEqualBttnChecked = false;
+    isOperatorChecked = false;
 })
 
 //create a percentage button and add an event to it
