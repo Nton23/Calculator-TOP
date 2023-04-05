@@ -75,6 +75,10 @@ function getOperators(bttnIDName, operatorSign) {
     button.addEventListener("click", () => {
         isOperatorChecked = true;
         numberInputArray = [];
+        let result = operate(firstNumberInput, secondNumberInput, operatorInput);
+        display.textContent = result;
+        updatedInput = result;
+        firstNumberInput = updatedInput;
         operatorInput = operatorSign;
     })
 }
@@ -90,8 +94,8 @@ equalSignBttn.addEventListener("click", () => {
 })
 
 //store number input into array
-function firstInput (userInput) {
-    if(numberInputArray.length < 13) {
+function firstInput(userInput) {
+    if (numberInputArray.length < 13) {
         numberInputArray.push(userInput);
     }
     newOutput = numberInputArray.join("");
@@ -100,8 +104,8 @@ function firstInput (userInput) {
 }
 
 //store second number input into array
-function secondInput (userInput) {
-    if(numberInputArray.length < 13) {
+function secondInput(userInput) {
+    if (numberInputArray.length < 13) {
         numberInputArray.push(userInput);
     }
     newOutput = numberInputArray.join("");
@@ -123,7 +127,7 @@ acResetBttn.addEventListener("click", () => {
 
 //create a percentage button and add an event to it
 const percentBttn = document.getElementById("percent-bttn");
-percentBttn.addEventListener ("click", () => {
+percentBttn.addEventListener("click", () => {
     isPercentBttnChecked = true;
     let result = (firstNumberInput * 0.01).toFixed(2);
     if (isOperatorChecked) {
@@ -138,7 +142,7 @@ percentBttn.addEventListener ("click", () => {
 
 //create positive and negative sign button and create an event for that button
 const positiveNegativeBttn = document.getElementById("positive-negative-sign-bttn");
-positiveNegativeBttn.addEventListener ("click", () => {
+positiveNegativeBttn.addEventListener("click", () => {
     let negative = -firstNumberInput;
     if (isOperatorChecked) {
         secondNumberInput += negative;
