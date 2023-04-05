@@ -134,7 +134,21 @@ percentBttn.addEventListener ("click", () => {
         display.textContent = firstNumberInput;
     }
     numberInputArray = [];
-})
+});
+
+//create positive and negative sign button and create an event for that button
+const positiveNegativeBttn = document.getElementById("positive-negative-sign-bttn");
+positiveNegativeBttn.addEventListener ("click", () => {
+    let negative = -firstNumberInput;
+    if (isOperatorChecked) {
+        secondNumberInput += negative;
+        display.textContent = secondNumberInput;
+    } else {
+        firstNumberInput = negative;
+        display.textContent = firstNumberInput;
+    }
+    numberInputArray = [];
+});
 
 //call function to store the operator when the user select
 getOperators("plus-bttn", "+");
