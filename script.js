@@ -54,6 +54,7 @@ let isEqualBttnChecked = false;
 let updatedInput = 0;
 let isPercentBttnChecked = false;
 let percentInputUpdated = 0;
+let result = 0;
 
 //funciton to get numbers when user click on the button
 function getNumbers(bttnIDName, numberValue) {
@@ -75,10 +76,6 @@ function getOperators(bttnIDName, operatorSign) {
     button.addEventListener("click", () => {
         isOperatorChecked = true;
         numberInputArray = [];
-        let result = operate(firstNumberInput, secondNumberInput, operatorInput);
-        display.textContent = result;
-        updatedInput = result;
-        firstNumberInput = updatedInput;
         operatorInput = operatorSign;
     })
 }
@@ -86,8 +83,7 @@ function getOperators(bttnIDName, operatorSign) {
 //create an event for equal to call the operate function above
 const equalSignBttn = document.getElementById("equal-sign-bttn");
 equalSignBttn.addEventListener("click", () => {
-    isEqualBttnChecked = true;
-    let result = operate(firstNumberInput, secondNumberInput, operatorInput);
+    result = operate(firstNumberInput, secondNumberInput, operatorInput);
     display.textContent = result;
     updatedInput = result;
     firstNumberInput = updatedInput;
@@ -171,4 +167,3 @@ getNumbers("number-six-bttn", 6);
 getNumbers("number-seven-bttn", 7);
 getNumbers("number-eight-bttn", 8);
 getNumbers("number-nine-bttn", 9);
-
